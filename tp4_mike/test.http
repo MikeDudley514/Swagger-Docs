@@ -1,0 +1,27 @@
+//Connexion d'un utilisateur :
+curl -X POST -H "Content-Type: application/json" -d '{"username": "Mikey", "password": "string"}' http://localhost:3000/login
+
+
+###
+//ajout matiere
+curl -X POST -H "Content-Type: application/json" -d '{"nom": "Math", "description": "Math", "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ik1pa2V5IiwiaWF0IjoxNzE1NTQ5NDczLCJleHAiOjE3MTU1NTMwNzN9.wOzwC9vVisfHYN6ATImBHiBnjlm5Quyus28F7Mo-eo0"}'
+ http://localhost:3000/matiere
+
+###
+//ajout evaluation
+curl -X POST -H "Content-Type: application/json" -d '{"user_id": 1, "matiere_id": 1, "note": 80, "date_evaluation": "2024-12-12", "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ik1pa2V5IiwiaWF0IjoxNzE1NTQ5NDczLCJleHAiOjE3MTU1NTMwNzN9.wOzwC9vVisfHYN6ATImBHiBnjlm5Quyus28F7Mo-eo0"}'
+ http://localhost:3000/evaluation
+###
+// delete
+ curl -X DELETE -H "Accept:*/*" -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ik1pa2V5IiwiaWF0IjoxNzE1NTU4MDQ1LCJleHAiOjE3MTU1NjE2NDV9.gbbCEp0NcLkNJkEFG-LGpcgOQU4utNvvO5g5V9GS4T8'
+ http://localhost:3000/matiere/2
+
+###
+curl -X PUT \
+  http://localhost:3000/matiere/2 \
+  -H 'Content-Type: application/json' \
+  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ik1pa2V5IiwiaWF0IjoxNzE1NTU4ODE4LCJleHAiOjE3MTU1NjI0MTh9.m1RdN7Xc_buqAG-rar7xhLilYy1kQWTpY2DFmaxPTLU' \
+  -d '{
+  "nom": "Nouveau nom",
+  "description": "Nouvelle description"
+}'
